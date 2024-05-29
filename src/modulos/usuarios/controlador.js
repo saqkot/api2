@@ -47,12 +47,12 @@ if(!db){
 
         }
 
-
         return  respuesta2;
     }
+
     
- function eliminar(body) {
-  const id = body.id; 
+    
+ function eliminar(id) {
   return db.eliminar(TABLA, id); 
 }
 
