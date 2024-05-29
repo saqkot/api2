@@ -25,9 +25,9 @@ if(!db){
             NIT: body.NIT,
             genero: body.genero,
             telefono: body.telefono,
-            ingreso: body.ingreso,
             profesion: body.profesion,
-            direccion: body.direccion
+            direccion: body.direccion,
+            ingreso: body.ingreso
         };
 
         const respuestas = await db.agregar(TABLA, solicitud);
