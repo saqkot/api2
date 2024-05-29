@@ -11,13 +11,11 @@ if(!db){
     function listado(){
         return db.listado(TABLA);
     }
-    
-   
-function eliminar(body) {
-  const id = body.id; 
-  return db.eliminar(TABLA, id); 
-}
 
+     
+    function empleado(id){
+        return db.empleado(TABLA, id);
+    }
     
     
      async function agregar(body){
@@ -53,9 +51,10 @@ function eliminar(body) {
         return  respuesta2;
     }
     
-    function eliminar(body){
-        return db.eliminar(TABLA, body);
-    }
+ function eliminar(body) {
+  const id = body.id; 
+  return db.eliminar(TABLA, id); 
+}
 
 function editar(id, body) {
         const usuario = {
