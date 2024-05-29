@@ -16,8 +16,22 @@ if(!db){
     }
     
     
-    function agregar(body){
-        return db.agregar(TABLA, body);
+    async function agregar(body) {
+        const solicitud = {
+            nombre: body.nombre,
+            apellido: body.apellido,
+            DPI: body.DPI,
+            NIT: body.NIT,
+            genero: body.genero,
+            telefono: body.telefono,
+            ingreso_mensual: body.ingreso_mensual,
+            profesion: body.profesion,
+            direccion: body.direccion
+        };
+
+        const respuestas = await db.agregar(TABLA, solicitud);
+        
+        return respuestas;
     }
     
     function eliminar(body){
