@@ -18,6 +18,7 @@ if(!db){
     
     async function agregar(body) {
         const solicitud = {
+            id:body.id,
             nombre: body.nombre,
             apellido: body.apellido,
             DPI: body.DPI,
