@@ -12,9 +12,12 @@ if(!db){
         return db.listado(TABLA);
     }
     
-    function empleado(id){
-        return db.empleado(TABLA, id);
-    }
+   
+function eliminar(body) {
+  const id = body.id; 
+  return db.eliminar(TABLA, id); 
+}
+
     
     
      async function agregar(body){
