@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const auth = require('../../auth');
 
 
-module.exports=  function(dbinyectada) {
+module.exports=  function(dbInyectada) {
 let db = dbinyectada;
 if(!db){
     db = require ('../../DB/mysql');
@@ -34,7 +34,7 @@ if(!db){
 
         }
         if(data.usuario){
-            authData.usuario = data. usuario
+            authData.usuario = data.usuario
         }
         if(data.password){
             authData.password = await bcrypt.hash(data.password.toString (), 5) 
