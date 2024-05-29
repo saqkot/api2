@@ -34,10 +34,10 @@ console.log(data)
 
         }
         if(data.usuario){
-            authData.usuario = data.usuario
+            authData.usuario = data.usuario;
         }
         if(data.password){
-            authData.password = await bcrypt.hash(data.password.toString (), 5) 
+            authData.password = await bcrypt.hash(data.password.toString (), 5); 
 
 
         }
