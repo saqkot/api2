@@ -53,12 +53,32 @@ if(!db){
     function eliminar(body){
         return db.eliminar(TABLA, body);
     }
+
+function editar(id, body) {
+        const usuario = {
+            nombre: body.nombre,
+            apellido: body.apellido,
+            tipo_usuario: body.tipo_usuario
+        }
+
+        if (body.usuario || body.password) {
+            return auth.editar({
+                id: id,
+                usuario: body.usuario,
+                password: body.password
+            }).then(() => db.editar(TABLA, id, usuario));
+        } else {
+            return db.editar(TABLA, id, usuario);
+        }
+    }
+
+    
     return{
     listado,
     empleado,
     agregar,
-    eliminar   
-    
+    eliminar,   
+    editar
     }
     
    
