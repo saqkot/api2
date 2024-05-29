@@ -34,6 +34,24 @@ if(!db){
         
         return respuestas;
     }
+
+  async function editar(id, body) {
+        const solicitud = {
+            nombre: body.nombre,
+            apellido: body.apellido,
+            DPI: body.DPI,
+            NIT: body.NIT,
+            genero: body.genero,
+            telefono: body.telefono,
+            profesion: body.profesion,
+            direccion: body.direccion,
+            ingreso: body.ingreso
+        };
+
+        const respuestas = await db.editar(TABLA, id, solicitud);
+        
+        return respuestas;
+    }
     
     function eliminar(body){
         return db.eliminar(TABLA, body);
@@ -42,6 +60,7 @@ if(!db){
     listado,
     empleado,
     agregar,
+    editar,
     eliminar   
     
     }
