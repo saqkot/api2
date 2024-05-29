@@ -111,11 +111,21 @@ function query(tabla, consulta){
 
 }
 
+function editar(tabla, id, data) {
+    return new Promise((resolve, reject) => {
+        conexion.query(`UPDATE ${tabla} SET ? WHERE id = ?`, [data, id], (error, result) => {
+            if (error) return reject(error);
+            resolve(result);
+        });
+    });
+}
+
 module.exports = {
 listado,
 empleado,
 agregar,
 eliminar,
-query
+query,
+editar
 
 }
