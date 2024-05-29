@@ -62,17 +62,15 @@ async function empleado(req, res){
 
 
 
-async function eliminar(req, res){
-        try{
-         const items = await controlador.eliminar(req.body);
-         respuestas.success(req, res, 'item eliminado',200);
-        }catch(err){
-         respuestas.error(req, res, err, 500);
-    
-    
-        }
-
-        }; 
+async function eliminar(req, res) {
+  try {
+    const id = req.params.id; 
+    const result = await controlador.eliminar(id); 
+    respuestas.success(req, res, 'Usuario eliminado con éxito', 200); 
+  } catch (err) {
+    respuestas.error(req, res, err, 500);
+  }
+};
     
 
 
