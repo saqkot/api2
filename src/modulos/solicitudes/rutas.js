@@ -65,14 +65,17 @@ async function editar(req, res) {
     }
 };
 
+
 async function eliminar(req, res) {
-    try {
-        const items = await controlador.eliminar(req.body);
-        respuestas.success(req, res, 'Solicitud eliminada', 200);
-    } catch (err) {
-        respuestas.error(req, res, err, 500);
-    }
+  try {
+    const result = await controlador.eliminar(req.params.id); 
+    respuestas.success(req, res, 'Solicitud eliminada', 200); 
+  } catch (err) {
+    respuestas.error(req, res, err, 500);
+  }
 };
+
+
 
 
 
