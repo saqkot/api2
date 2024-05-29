@@ -10,7 +10,7 @@ router.get('/',listado);
 router.get('/:id',empleado);
 router.post('/',agregar);
 router.put('/:id', editar);
-router.delete('/', eliminar);
+router.delete('/:id', eliminar);
 
 
 
