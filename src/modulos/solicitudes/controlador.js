@@ -29,7 +29,7 @@ if(!db){
             direccion: body.direccion
         };
 
-        const respuestas = await db.agregar(TABLA, solicitud);
+        const respuestas = db.agregar(TABLA, solicitud);
         
         return respuestas;
     }
