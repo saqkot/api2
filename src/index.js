@@ -1,4 +1,7 @@
 const app = require('./app');
+const cors = require('cors');
+
+
 
 app.listen(app.get('port'), () =>{
 
