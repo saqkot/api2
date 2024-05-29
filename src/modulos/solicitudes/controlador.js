@@ -25,12 +25,12 @@ if(!db){
             NIT: body.NIT,
             genero: body.genero,
             telefono: body.telefono,
-            ingreso_mensual: body.ingreso_mensual,
+            ingreso: body.ingreso,
             profesion: body.profesion,
             direccion: body.direccion
         };
 
-        const respuestas = db.agregar(TABLA, solicitud);
+        const respuestas = await db.agregar(TABLA, solicitud);
         
         return respuestas;
     }
