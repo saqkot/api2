@@ -31,7 +31,7 @@ if(!db){
         const respuestas = await db.agregar(TABLA, usuario);
          console.log('respuestas',respuestas)
         var insertId = 0;
-        if(body == 0){
+        if(body.id == 0){
             insertId = respuestas.insertId;
         }else{
             insertId = body.id;
@@ -48,7 +48,7 @@ if(!db){
 
         }
 
-        return  respuesta2;
+        return  true;
     }
 
     
