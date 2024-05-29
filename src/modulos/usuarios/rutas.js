@@ -9,7 +9,7 @@ const router = express.Router();
 router.get('/',listado);
 router.get('/:id',empleado);
 router.post('/',agregar);
-router.put('/',eliminar);
+router.delete('/:id',eliminar);
 router.put('/:id', editar);
 
 
