@@ -53,8 +53,8 @@ if(!db){
         return respuestas;
     }
     
-    function eliminar(body){
-        return db.eliminar(TABLA, body);
+    function eliminar(id){
+        return db.eliminar(TABLA, id);
     }
     return{
     listado,
