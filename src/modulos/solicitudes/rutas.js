@@ -47,9 +47,7 @@ async function agregar(req, res) {
     } catch (err) {
         respuestas.error(req, res, err, 500);
     }
-}
-       
-        }; 
+}; 
     
 
 
