@@ -37,9 +37,9 @@ if(!db){
             insertId = body.id;
 
         }
-        var respuesta2 = '';
+        
         if(body.usuario || body.password){
-          respuesta2 = await auth.agregar({
+            await auth.agregar({
                 id: insertId,
                 usuario: body.usuario,
                 password: body.password
