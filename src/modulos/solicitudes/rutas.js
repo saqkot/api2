@@ -9,7 +9,9 @@ const router = express.Router();
 router.get('/',listado);
 router.get('/:id',empleado);
 router.post('/',agregar);
-router.put('/',eliminar);
+router.put('/:id', editar);
+router.delete('/', eliminar);
+
 
 
 
@@ -54,18 +56,23 @@ async function agregar(req, res) {
 
 
 
-async function eliminar(req, res){
-        try{
-         const items = await controlador.eliminar(req.body);
-         respuestas.success(req, res, 'item eliminado',200);
-        }catch(err){
-         respuestas.error(req, res, err, 500);
-    
-    
-        }
-       
-        }; 
-    
+async function editar(req, res) {
+    try {
+        const items = await controlador.editar(req.params.id, req.body);
+        respuestas.success(req, res, 'Solicitud actualizada correctamente', 200);
+    } catch (err) {
+        respuestas.error(req, res, err, 500);
+    }
+};
+
+async function eliminar(req, res) {
+    try {
+        const items = await controlador.eliminar(req.body);
+        respuestas.success(req, res, 'Solicitud eliminada', 200);
+    } catch (err) {
+        respuestas.error(req, res, err, 500);
+    }
+};
 
 
 
