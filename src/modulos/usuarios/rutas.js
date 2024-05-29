@@ -10,6 +10,7 @@ router.get('/',listado);
 router.get('/:id',empleado);
 router.post('/',agregar);
 router.put('/',eliminar);
+router.put('/:id', editar);
 
 
 
@@ -70,10 +71,21 @@ async function eliminar(req, res){
     
     
         }
-       
+
         }; 
     
 
+
+async function editar(req, res) {
+    try {
+        const id = req.params.id;
+        const body = req.body;
+        const result = await controlador.editar(id, body);
+        respuestas.success(req, res, 'Usuario actualizado con éxito', 200);
+    } catch (err) {
+        respuestas.error(req, res, err, 500);
+    }
+};
 
 
 
