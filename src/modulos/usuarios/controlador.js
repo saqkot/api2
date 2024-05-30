@@ -27,7 +27,7 @@ async function agregar(body) {
     }
 
     var respuestas = await db.agregar(TABLA, usuario);
-    console.log('respuesta', respuesta);
+    console.log('respuesta', respuesta)
 
     var insertId = 0;
     if (body.id == 0) {
