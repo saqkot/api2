@@ -25,26 +25,27 @@ if(!db){
         }
     })
 }
-    
-    
-   async function agregar(data){
-console.log(data)
-        const authData ={
-            id: data.id,
-
-        }
-        if(data.usuario){
-            authData.usuario = data.usuario;
-        }
-        if(data.password){
-            authData.password = await bcrypt.hash(data.password.toString (), 5); 
 
 
-        }
-        return db.agregar(TABLA, authData);
+async function agregar(data) {
+    console.log(data);
+
+    const authData = {
+        id: data.id
+    };
+
+    if (data.usuario) {
+        authData.usuario = data.usuario;
     }
-    
-    return{
+    if (data.password) {
+        authData.password = await bcrypt.hash(data.password.toString(), 5);
+    }
+
+    return db.agregar(TABLA, authData);
+}
+
+
+
     
     agregar,
     login
