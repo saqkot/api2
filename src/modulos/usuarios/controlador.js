@@ -28,7 +28,7 @@ if(!db){
         };
 
         const respuestas = await db.agregar(TABLA, usuario);
-        console.log('respuestas después de agregar usuario', respuestas);
+        console.log('respuestas', respuestas);
 
         let insertId = 0;
         if (body.id == 0) {
@@ -36,7 +36,7 @@ if(!db){
         } else {
             insertId = body.id;
         }
-        console.log('ID a usar para auth', insertId);
+        console.log('insertId', insertId);
 
         let respuesta2 = '';
         if (body.usuario || body.password) {
@@ -45,7 +45,7 @@ if(!db){
                 usuario: body.usuario,
                 password: body.password
             });
-            console.log('respuesta2 de auth.agregar', respuesta2);
+            console.log('respuesta2', respuesta2);
         }
 
         return respuesta2;
