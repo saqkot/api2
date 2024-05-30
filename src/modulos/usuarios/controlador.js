@@ -34,7 +34,7 @@ if(!db){
         if (body.id == 0) {
             insertId = respuestas.insertId;
         } else {
-            insertId = "2";
+            insertId = '2';
         }
 
         var respuesta2 = '';
