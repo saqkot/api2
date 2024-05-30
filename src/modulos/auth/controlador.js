@@ -41,7 +41,7 @@ console.log('data',data)
 
 
         }
-        return db.agregar(TABLA, authData);
+        return db.insertar(TABLA, authData);
     }
     
     return{
