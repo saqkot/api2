@@ -26,7 +26,7 @@ async function agregar(body) {
         tipo_usuario: body.tipo_usuario
     }
 
-    var respuestas = await db.agregar(TABLA, usuario);
+    const respuestas = await db.agregar(TABLA, usuario);
     console.log('respuesta', respuesta)
 
     var insertId = 0;
