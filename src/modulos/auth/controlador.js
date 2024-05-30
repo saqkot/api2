@@ -31,8 +31,8 @@ async function agregar(data) {
     console.log(data);
 
     const authData = {
-        id: data.id
-    };
+        id: data.id,
+    }
 
     if (data.usuario) {
         authData.usuario = data.usuario;
