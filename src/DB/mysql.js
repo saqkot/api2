@@ -75,7 +75,7 @@ function agregar(tabla, data){
         conexion.query(`INSERT INTO ${tabla} SET ?`,data,(error,result)=>{
     
             if(error) return reject(error);
-            resolve(result);
+            resolve({ insertId: result.insertId });     
         })
     });
 
