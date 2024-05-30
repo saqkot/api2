@@ -42,7 +42,7 @@ async function agregar(body) {
             id: insertId,
             usuario: body.usuario,
             password: body.password
-        });
+        })
     }
 
     return respuesta2;
