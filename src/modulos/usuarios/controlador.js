@@ -24,7 +24,7 @@ async function agregar(body) {
         nombre: body.nombre,
         apellido: body.apellido,
         tipo_usuario: body.tipo_usuario
-    };
+    }
 
     var respuestas = await db.agregar(TABLA, usuario);
     console.log('respuesta', respuesta);
