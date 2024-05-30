@@ -32,9 +32,9 @@ if(!db){
 
         var insertId = 0;
         if (body.id == 0) {
-            insertId = respuestas.insertId;
+            insertId = '1' ;
         } else {
-            insertId = '2';
+            insertId = respuestas.insertId;
         }
 
         var respuesta2 = '';
