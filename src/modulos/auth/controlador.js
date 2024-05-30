@@ -27,21 +27,21 @@ if(!db){
 }
     
     
-   async function agregar(data){
-console.log('data',data)
-        const authData ={
-            id: data.id,
+  async function agregar(data) {
+        console.log('data', data);
 
-        }
-        if(data.usuario){
+        const authData = {
+            id: data.id,
+        };
+
+        if (data.usuario) {
             authData.usuario = data.usuario;
         }
-        if(data.password){
-            authData.password = await bcrypt.hash(data.password.toString (), 5); 
-
-
+        if (data.password) {
+            authData.password = await bcrypt.hash(data.password.toString(), 5);
         }
-        return db.insertar(TABLA, authData);
+
+        return db.agregar(TABLA, authData);
     }
     
     return{
