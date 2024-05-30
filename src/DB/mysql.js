@@ -115,12 +115,22 @@ function editar(tabla, id, data) {
     });
 }
 
+function ultimoId(tabla) {
+    return new Promise((resolve, reject) => {
+        conexion.query(`SELECT id FROM ${tabla} ORDER BY id DESC LIMIT 1`, (error, result) => {
+            if (error) return reject(error);
+            resolve(result[0].id);
+        });
+    });
+}
+
 module.exports = {
 listado,
 empleado,
 agregar,
 eliminar,
 query,
-editar
+editar,
+ultimoId
 
 }
