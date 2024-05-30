@@ -19,6 +19,7 @@ if(!db){
     
 
 async function agregar(body) {
+    // Crear el objeto usuario con los datos proporcionados en body
     const usuario = {
         id: body.id,
         nombre: body.nombre,
@@ -26,27 +27,33 @@ async function agregar(body) {
         tipo_usuario: body.tipo_usuario
     };
 
-    var respuestas = await db.agregar(TABLA, usuario);
+    // Insertar el usuario en la tabla y obtener la respuesta
+    var respuestas = await db.agregar('usuarios', usuario);
     console.log('respuestas', respuestas);
 
+    // Determinar el id insertado
     var insertId = 0;
-    if (body.id == 0) {
+    if (body.id == 0) { // Si el id en body es 0, usar el id generado automáticamente
         insertId = respuestas.insertId;
-    } else {
+    } else { // Si el id está proporcionado en body, usarlo
         insertId = body.id;
     }
 
+    // Insertar los datos de autenticación solo si usuario o password están presentes
     var respuesta2 = '';
     if (body.usuario || body.password) {
         respuesta2 = await auth.agregar({
-            id: insertId,
+            id: insertId, // Usar el id determinado anteriormente
             usuario: body.usuario,
             password: body.password
         });
     }
 
-    return respuesta2;
+    return respuesta2; // Devolver la respuesta de la inserción en la tabla auth
 }
+
+
+
 
 
     
