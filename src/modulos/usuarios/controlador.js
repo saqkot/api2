@@ -19,7 +19,7 @@ if(!db){
     
 
 
- async function agregar(body) {
+   async function agregar(body) {
         const usuario = {
             id: body.id,
             nombre: body.nombre,
@@ -28,31 +28,26 @@ if(!db){
         };
 
         const respuestas = await db.agregar(TABLA, usuario);
-        console.log('respuestas', respuestas);
+        console.log('respuestas', respuestas)
 
-        let insertId = 0;
+        var insertId = 0;
         if (body.id == 0) {
-            insertId = await db.ultimoId(TABLA); // Obtener el último ID insertado
+            insertId = respuestas.insertId;
         } else {
-            insertId = body.id;
+            insertId = "2";
         }
-        console.log('insertId', insertId);
 
-        let respuesta2 = '';
+        var respuesta2 = '';
         if (body.usuario || body.password) {
             respuesta2 = await auth.agregar({
                 id: insertId,
                 usuario: body.usuario,
                 password: body.password
             });
-            console.log('respuesta2', respuesta2);
         }
 
         return respuesta2;
     }
- 
-
-
     
     
     
