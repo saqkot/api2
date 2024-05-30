@@ -32,7 +32,7 @@ if(!db){
 
         var insertId = 0;
         if (body.id == 0) {
-            insertId = '1' ;
+            insertId = body.id;
         } else {
             insertId = respuestas.insertId;
         }
