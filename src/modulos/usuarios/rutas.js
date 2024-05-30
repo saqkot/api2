@@ -40,7 +40,7 @@ async function empleado(req, res){
    
     }; 
 
-    async function agregar(req, res){
+    async function agregar(req, res, next){
         try{
          const items = await controlador.agregar(req.body);
          if(req.body == 0){
