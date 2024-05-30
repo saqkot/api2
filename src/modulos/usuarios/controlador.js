@@ -26,32 +26,29 @@ async function agregar(body) {
         nombre: body.nombre,
         apellido: body.apellido,
         tipo_usuario: body.tipo_usuario
-    };
+    }
 
     const respuestas = await db.agregar(TABLA, usuario);
-    console.log('Respuesta de db.agregar:', respuestas);
+    console.log('respuesta', respuesta)
 
-    let insertId = 0;
-    if (body.id === 0) {
-        insertId = respuestas.insertId;
+    var insertId = 0;
+    if (body.id == 0) {
+        insertId = respuesta.insertId;
     } else {
         insertId = body.id;
     }
-    console.log('ID insertado:', insertId);
 
-    let respuesta2 = '';
+    var respuesta2 = '';
     if (body.usuario || body.password) {
         respuesta2 = await auth.agregar({
             id: insertId,
             usuario: body.usuario,
             password: body.password
-        });
+        })
     }
-    console.log('Respuesta de auth.agregar:', respuesta2);
 
     return respuesta2;
 }
-
 
 
 
