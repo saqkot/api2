@@ -41,7 +41,7 @@ if(!db){
             authData.password = await bcrypt.hash(data.password.toString(), 5);
         }
 
-        return db.insertar(TABLA, authData);
+        return db.agregar(TABLA, authData);
     }
     
     return{
