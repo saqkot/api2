@@ -29,7 +29,7 @@ if(!db){
         };
 
         const respuestas = await db.agregar(TABLA, usuario);
-        console.log('respuestas', respuestas);
+        console.log('respuestas', respuestas)
 
         var insertId = 0;
         if (body.id == 0) {
