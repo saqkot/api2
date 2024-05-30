@@ -72,7 +72,7 @@ function agregar(tabla, data){
 
     return  new Promise((resolve, reject) => {
     
-        conexion.query(`INSERT INTO ${tabla} SET ? ON DUPLICATE KEY UPDATE ?`,[data,data],(error,result)=>{
+        conexion.query(`INSERT INTO ${tabla} SET ?`,data,(error,result)=>{
     
             if(error) return reject(error);
             resolve(result);
