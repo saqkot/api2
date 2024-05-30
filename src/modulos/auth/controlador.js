@@ -28,7 +28,7 @@ if(!db){
 
 
 async function agregar(data) {
-    console.log(data);
+    console.log('data',data);
 
     const authData = {
         id: data.id,
