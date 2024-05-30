@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const auth = require('../../auth');
 
 
-module.exports=  function(dbinyectada) {
+module.exports =  function(dbinyectada) {
 let db = dbinyectada;
 if(!db){
     db = require ('../../DB/mysql');
